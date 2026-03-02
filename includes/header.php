@@ -73,7 +73,7 @@ $page_title          = $page_title ?? APP_NAME;
         </div>
 
         <div class="sidebar-footer">
-            &copy; NB.ARCH
+            &copy; NB.ARCH — Tous droits réservés
         </div>
     </nav>
 

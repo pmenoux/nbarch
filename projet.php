@@ -59,9 +59,14 @@ $description = trim($description);
 <?php endif; ?>
 
 <?php if (!empty($photos)): ?>
+<?php
+// Crédits photographiques (champ credits du projet, si renseigné)
+$credits = $projet['credits'] ?? '';
+if ($credits): ?>
 <div class="projet-credits">
-    photographies – tous droits réservés
+    <?= e($credits) ?>
 </div>
+<?php endif; ?>
 
 <div class="projet-galerie">
     <?php foreach ($photos as $photo): ?>
@@ -71,8 +76,6 @@ $description = trim($description);
     <?php endforeach; ?>
 </div>
 <?php endif; ?>
-
-<div class="copyright">Tous droits réservés</div>
 
 <?php endif; ?>
 

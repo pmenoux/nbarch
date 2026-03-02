@@ -45,6 +45,4 @@ $cover = get_cover($premier['id']);
 </div>
 <?php endif; ?>
 
-<div class="copyright">Tous droits réservés</div>
-
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

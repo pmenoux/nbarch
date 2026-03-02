@@ -2,3 +2,5 @@ config.php
 uploads/
 .DS_Store
 *.log
+*.otf
+assets/LL Akkurat Family OTPro/

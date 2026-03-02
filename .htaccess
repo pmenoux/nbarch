@@ -7,6 +7,10 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# Admin et actions → gérés par leurs propres .htaccess / fichiers
+RewriteRule ^admin(/|$) - [L]
+RewriteRule ^actions/ - [L]
+
 # /realisations/nom-du-projet  → projet.php
 RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)/?$  projet.php?cat=$1&slug=$2 [L,QSA]
 

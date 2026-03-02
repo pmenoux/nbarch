@@ -1,0 +1,283 @@
+/* ============================================
+   NB.ARCH — Feuille de style
+   PHP/MySQL custom — 2026
+   Typo : Akkurat Pro
+   ============================================ */
+
+/* --- @font-face --- */
+@font-face {
+    font-family: 'Akkurat Pro';
+    src: url('../fonts/AkkuratPro-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Akkurat Pro';
+    src: url('../fonts/AkkuratPro-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Akkurat Pro';
+    src: url('../fonts/AkkuratPro-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Akkurat Pro';
+    src: url('../fonts/AkkuratPro-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Akkurat Pro';
+    src: url('../fonts/AkkuratPro-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Akkurat Pro';
+    src: url('../fonts/AkkuratPro-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Base --- */
+html {
+    font-size: 14px;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    font-family: 'Akkurat Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+a:hover {
+    color: #000;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Layout --- */
+.site {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 170px;
+    flex-shrink: 0;
+    padding: 40px 20px 40px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.logo {
+    display: block;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    color: #000;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+.logo:hover {
+    color: #000;
+}
+
+/* --- Navigation --- */
+.nav-cat {
+    margin-bottom: 8px;
+}
+
+.nav-cat-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #333;
+    cursor: pointer;
+    padding: 4px 0;
+    background: none;
+    border: none;
+    font-family: inherit;
+}
+.nav-cat-title:hover {
+    color: #000;
+}
+.nav-cat-title .arrow {
+    font-size: 8px;
+    transition: transform 0.2s;
+    color: #999;
+}
+.nav-cat.active .nav-cat-title {
+    font-weight: 700;
+}
+.nav-cat.active .nav-cat-title .arrow {
+    transform: rotate(180deg);
+}
+
+/* Liste projets dans la sidebar */
+.nav-projets {
+    display: none;
+    list-style: none;
+    padding: 4px 0 8px 0;
+}
+.nav-cat.active .nav-projets {
+    display: block;
+}
+.nav-projets li {
+    padding: 2px 0;
+}
+.nav-projets a {
+    font-weight: 300;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #666;
+}
+.nav-projets a:hover {
+    color: #000;
+}
+.nav-projets a.current {
+    font-weight: 700;
+    color: #000;
+}
+
+/* Lien simple (Equipe, Contact) */
+.nav-page {
+    display: block;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #333;
+    padding: 4px 0;
+    margin-bottom: 8px;
+}
+.nav-page:hover {
+    color: #000;
+}
+
+/* --- Contenu principal --- */
+.content {
+    margin-left: 170px;
+    padding: 40px 40px 60px 40px;
+    max-width: 900px;
+    flex: 1;
+}
+
+/* Page projet */
+.projet-titre {
+    font-weight: 300;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: #000;
+}
+
+.projet-meta {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.projet-credits {
+    font-weight: 300;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 24px;
+}
+
+.projet-galerie img {
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 580px;
+}
+
+/* Copyright bas de page */
+.copyright {
+    font-weight: 300;
+    font-size: 11px;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* Page fixe (équipe, contact) */
+.page-titre {
+    font-weight: 300;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+    color: #000;
+}
+.page-contenu {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.page-contenu p {
+    margin-bottom: 14px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+    }
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    .site {
+        flex-direction: column;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    .projet-titre {
+        font-size: 24px;
+    }
+    .projet-galerie img {
+        max-width: 100%;
+    }
+}

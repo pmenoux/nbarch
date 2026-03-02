@@ -1,0 +1,21 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Fichiers et dossiers réels → servis directement
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /realisations/nom-du-projet  → projet.php
+RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)/?$  projet.php?cat=$1&slug=$2 [L,QSA]
+
+# /realisations                → categorie.php
+RewriteRule ^([a-z0-9-]+)/?$   categorie.php?slug=$1 [L,QSA]
+
+# Protection dossier uploads (pas d'exécution PHP)
+<FilesMatch "\.(php|php[0-9]|phtml|phar)$">
+    <If "%{REQUEST_URI} =~ m#/uploads/#">
+        Require all denied
+    </If>
+</FilesMatch>

@@ -260,6 +260,77 @@ body {
 .badge-ok    { background: #e8f5e9; color: #2e7d32; }
 .badge-draft { background: #fff3e0; color: #e65100; }
 
+/* --- Photo grid --- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.photo-card {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    cursor: grab;
+    border: 2px solid transparent;
+    transition: border-color .15s;
+}
+.photo-card.is-cover { border-color: #2e7d32; }
+.photo-card.dragging { opacity: .4; }
+.photo-card.drag-over { border-color: #333; }
+.photo-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+.photo-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: #2e7d32;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: .05em;
+}
+.photo-actions {
+    padding: 6px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+/* --- Sortable list (categories, projets) --- */
+.sortable-list {
+    list-style: none;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    overflow: hidden;
+}
+.sortable-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid #eee;
+    cursor: grab;
+    gap: 12px;
+    transition: background .1s;
+}
+.sortable-item:last-child { border-bottom: none; }
+.sortable-item.dragging { opacity: .4; }
+.sortable-item.drag-over { background: #f0f8ff; }
+.sortable-item .handle {
+    color: #ccc;
+    font-size: 16px;
+    cursor: grab;
+}
+.sortable-item .name { flex: 1; font-weight: 500; }
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
     .admin-header {

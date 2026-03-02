@@ -43,6 +43,7 @@ $flash = get_flash();
     <?php endif; ?>
 </main>
 
+<script>window.APP_URL = <?= json_encode(APP_URL) ?>;</script>
 <script src="<?= APP_URL ?>/admin/js/admin.js"></script>
 </body>
 </html>

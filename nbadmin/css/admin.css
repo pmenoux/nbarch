@@ -331,6 +331,21 @@ body {
 }
 .sortable-item .name { flex: 1; font-weight: 500; }
 
+/* --- Quill editor --- */
+.ql-container { min-height: 200px; font-size: 14px; font-family: inherit; }
+.ql-editor { min-height: 200px; }
+.ql-toolbar.ql-snow { border-color: #ddd; border-radius: 3px 3px 0 0; }
+.ql-container.ql-snow { border-color: #ddd; border-radius: 0 0 3px 3px; }
+
+/* --- Footer --- */
+.admin-footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 11px;
+    color: #bbb;
+    letter-spacing: .05em;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
     .admin-header {

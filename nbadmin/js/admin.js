@@ -208,4 +208,37 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(url, { method: 'POST', body: data });
     }
 
+    // ========================================
+    // Quill WYSIWYG editors
+    // ========================================
+    var quillConfig = {
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                ['bold', 'italic'],
+                ['link'],
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                ['clean']
+            ]
+        }
+    };
+
+    // Éditeur description (projets)
+    var edDesc = document.getElementById('editor-description');
+    if (edDesc) {
+        var qDesc = new Quill(edDesc, quillConfig);
+        edDesc.closest('form').addEventListener('submit', function () {
+            document.getElementById('description').value = qDesc.root.innerHTML;
+        });
+    }
+
+    // Éditeur contenu (pages)
+    var edCont = document.getElementById('editor-contenu');
+    if (edCont) {
+        var qCont = new Quill(edCont, quillConfig);
+        edCont.closest('form').addEventListener('submit', function () {
+            document.getElementById('contenu').value = qCont.root.innerHTML;
+        });
+    }
+
 });

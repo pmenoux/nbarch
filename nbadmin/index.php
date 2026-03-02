@@ -1,6 +1,8 @@
 <?php
 // Front controller admin — toutes les routes passent ici
 
+define('APP_VERSION', '1.0.0');
+
 session_start();
 
 require_once __DIR__ . '/../config.php';

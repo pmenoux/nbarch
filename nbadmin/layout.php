@@ -10,6 +10,7 @@ $flash = get_flash();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($page_admin_title) ?> — Admin <?= e(APP_NAME) ?></title>
     <link rel="stylesheet" href="<?= APP_URL ?>/nbadmin/css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
 </head>
 <body>
 
@@ -43,7 +44,10 @@ $flash = get_flash();
     <?php endif; ?>
 </main>
 
+<footer class="admin-footer">v<?= APP_VERSION ?></footer>
+
 <script>window.APP_URL = <?= json_encode(APP_URL) ?>;</script>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 <script src="<?= APP_URL ?>/nbadmin/js/admin.js"></script>
 </body>
 </html>

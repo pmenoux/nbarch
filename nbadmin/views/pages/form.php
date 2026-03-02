@@ -17,8 +17,9 @@ if (!$page) {
     </div>
 
     <div class="form-group">
-        <label for="contenu">Contenu (HTML)</label>
-        <textarea id="contenu" name="contenu"><?= e($page['contenu'] ?? '') ?></textarea>
+        <label>Contenu</label>
+        <div id="editor-contenu"><?= $page['contenu'] ?? '' ?></div>
+        <input type="hidden" id="contenu" name="contenu">
     </div>
 
     <div class="form-actions">

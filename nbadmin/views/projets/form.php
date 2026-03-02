@@ -48,8 +48,9 @@ $categories = DB::fetchAll('SELECT * FROM categories ORDER BY ordre');
     </div>
 
     <div class="form-group">
-        <label for="description">Description (HTML)</label>
-        <textarea id="description" name="description"><?= e($projet['description'] ?? '') ?></textarea>
+        <label>Description</label>
+        <div id="editor-description"><?= $projet['description'] ?? '' ?></div>
+        <input type="hidden" id="description" name="description">
     </div>
 
     <div class="form-group">

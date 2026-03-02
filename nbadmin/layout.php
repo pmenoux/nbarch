@@ -18,7 +18,7 @@ $flash = get_flash();
     <a href="<?= APP_URL ?>/nbadmin/" class="admin-logo">NB.ARCH</a>
     <nav class="admin-nav">
         <a href="<?= APP_URL ?>/nbadmin/projets"<?= str_starts_with($route, 'projets') ? ' class="active"' : '' ?>>Projets</a>
-        <a href="<?= APP_URL ?>/nbadmin/categories"<?= $route === 'categories' ? ' class="active"' : '' ?>>Catégories</a>
+        <a href="<?= APP_URL ?>/nbadmin/categories"<?= str_starts_with($route, 'categories') ? ' class="active"' : '' ?>>Catégories</a>
         <a href="<?= APP_URL ?>/nbadmin/pages"<?= str_starts_with($route, 'pages') ? ' class="active"' : '' ?>>Pages</a>
         <a href="<?= APP_URL ?>/nbadmin/aide"<?= $route === 'aide' ? ' class="active"' : '' ?>>Aide</a>
     </nav>

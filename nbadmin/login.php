@@ -8,7 +8,7 @@ $error = get_flash();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connexion — <?= e(APP_NAME) ?></title>
-    <link rel="stylesheet" href="<?= APP_URL ?>/admin/css/admin.css">
+    <link rel="stylesheet" href="<?= APP_URL ?>/nbadmin/css/admin.css">
 </head>
 <body class="login-body">
 <div class="login-box">

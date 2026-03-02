@@ -4,14 +4,14 @@ $id = (int)($_GET['id'] ?? 0);
 $projet = DB::fetchOne('SELECT * FROM projets WHERE id = ?', [$id]);
 if (!$projet) {
     flash('Projet introuvable.', 'err');
-    redirect(APP_URL . '/admin/projets');
+    redirect(APP_URL . '/nbadmin/projets');
 }
 $photos = DB::fetchAll('SELECT * FROM photos WHERE projet_id = ? ORDER BY ordre', [$id]);
 $cover = $photos[0] ?? null;
 ?>
 
 <p style="margin-bottom:16px">
-    <a href="<?= APP_URL ?>/admin/projets/edit?id=<?= $id ?>" class="btn btn-sm">&larr; Retour au projet</a>
+    <a href="<?= APP_URL ?>/nbadmin/projets/edit?id=<?= $id ?>" class="btn btn-sm">&larr; Retour au projet</a>
     <strong style="margin-left:12px"><?= e($projet['titre']) ?></strong>
     <span style="color:#888">(<?= count($photos) ?> photo<?= count($photos) > 1 ? 's' : '' ?>)</span>
 </p>

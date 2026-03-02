@@ -3,7 +3,7 @@
 // Bloque l'accès si non connecté
 function require_login(): void {
     if (empty($_SESSION['admin_id'])) {
-        redirect(APP_URL . '/admin/login');
+        redirect(APP_URL . '/nbadmin/login');
     }
 }
 

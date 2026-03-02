@@ -8,7 +8,7 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # Admin et actions → gérés par leurs propres .htaccess / fichiers
-RewriteRule ^admin(/|$) - [L]
+RewriteRule ^nbadmin(/|$) - [L]
 RewriteRule ^actions/ - [L]
 
 # /realisations/nom-du-projet  → projet.php

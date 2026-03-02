@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/helpers.php';
 require_once __DIR__ . '/../includes/csrf.php';
-require_once __DIR__ . '/../admin/auth.php';
+require_once __DIR__ . '/../nbadmin/auth.php';
 
 require_login();
 csrf_check();
@@ -29,4 +29,4 @@ if ($photo) {
     flash('Photo introuvable.', 'err');
 }
 
-redirect(APP_URL . '/admin/projets/photos?id=' . $projet_id);
+redirect(APP_URL . '/nbadmin/projets/photos?id=' . $projet_id);

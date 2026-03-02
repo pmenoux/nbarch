@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/helpers.php';
 require_once __DIR__ . '/../includes/csrf.php';
-require_once __DIR__ . '/../admin/auth.php';
+require_once __DIR__ . '/../nbadmin/auth.php';
 
 require_login();
 csrf_check();
@@ -28,7 +28,7 @@ if (!empty($_POST['delete']) && $id > 0) {
     // CASCADE supprime les photos en DB
     DB::query('DELETE FROM projets WHERE id = ?', [$id]);
     flash('Projet supprimé.');
-    redirect(APP_URL . '/admin/projets');
+    redirect(APP_URL . '/nbadmin/projets');
 }
 
 // --- Validation ---
@@ -41,7 +41,7 @@ $statut       = in_array($_POST['statut'] ?? '', ['publié', 'brouillon']) ? $_P
 
 if ($titre === '' || $categorie_id === 0) {
     flash('Titre et catégorie requis.', 'err');
-    redirect(APP_URL . '/admin/projets/' . ($id ? "edit?id=$id" : 'nouveau'));
+    redirect(APP_URL . '/nbadmin/projets/' . ($id ? "edit?id=$id" : 'nouveau'));
 }
 
 // Slug auto si vide
@@ -65,7 +65,7 @@ if ($id > 0) {
         [$titre, $slug, $categorie_id, $description ?: null, $credits ?: null, $statut, $id]
     );
     flash('Projet mis à jour.');
-    redirect(APP_URL . '/admin/projets/edit?id=' . $id);
+    redirect(APP_URL . '/nbadmin/projets/edit?id=' . $id);
 } else {
     // --- Création ---
     // Ordre : mettre à la fin
@@ -80,5 +80,5 @@ if ($id > 0) {
     );
     $new_id = DB::lastInsertId();
     flash('Projet créé.');
-    redirect(APP_URL . '/admin/projets/edit?id=' . $new_id);
+    redirect(APP_URL . '/nbadmin/projets/edit?id=' . $new_id);
 }

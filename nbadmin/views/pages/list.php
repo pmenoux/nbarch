@@ -16,7 +16,7 @@ $pages = DB::fetchAll('SELECT * FROM pages ORDER BY ordre');
             <td style="font-weight:500"><?= e($p['titre']) ?></td>
             <td style="color:#888">/<?= e($p['slug']) ?></td>
             <td class="actions">
-                <a href="<?= APP_URL ?>/admin/pages/edit?id=<?= $p['id'] ?>" class="btn btn-sm">Modifier</a>
+                <a href="<?= APP_URL ?>/nbadmin/pages/edit?id=<?= $p['id'] ?>" class="btn btn-sm">Modifier</a>
                 <a href="<?= APP_URL ?>/<?= e($p['slug']) ?>" target="_blank" class="btn btn-sm">Voir</a>
             </td>
         </tr>

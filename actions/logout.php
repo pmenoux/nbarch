@@ -11,4 +11,4 @@ require_once __DIR__ . '/../includes/csrf.php';
 csrf_check();
 
 session_destroy();
-redirect(APP_URL . '/admin/login');
+redirect(APP_URL . '/nbadmin/login');

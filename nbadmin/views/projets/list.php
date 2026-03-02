@@ -17,7 +17,7 @@ foreach ($projets as $p) {
 
 <div class="toolbar">
     <div></div>
-    <a href="<?= APP_URL ?>/admin/projets/nouveau" class="btn btn-primary">+ Nouveau projet</a>
+    <a href="<?= APP_URL ?>/nbadmin/projets/nouveau" class="btn btn-primary">+ Nouveau projet</a>
 </div>
 
 <?php foreach ($par_cat as $cat_nom => $liste): ?>
@@ -39,7 +39,7 @@ foreach ($projets as $p) {
         <tr>
             <td style="color:#aaa"><?= $p['ordre'] ?></td>
             <td>
-                <a href="<?= APP_URL ?>/admin/projets/edit?id=<?= $p['id'] ?>" style="font-weight:500;color:#000;text-decoration:none">
+                <a href="<?= APP_URL ?>/nbadmin/projets/edit?id=<?= $p['id'] ?>" style="font-weight:500;color:#000;text-decoration:none">
                     <?= e($p['titre']) ?>
                 </a>
             </td>
@@ -52,8 +52,8 @@ foreach ($projets as $p) {
             </td>
             <td><?= $p['nb_photos'] ?></td>
             <td class="actions">
-                <a href="<?= APP_URL ?>/admin/projets/photos?id=<?= $p['id'] ?>" class="btn btn-sm">Photos</a>
-                <a href="<?= APP_URL ?>/admin/projets/edit?id=<?= $p['id'] ?>" class="btn btn-sm">Modifier</a>
+                <a href="<?= APP_URL ?>/nbadmin/projets/photos?id=<?= $p['id'] ?>" class="btn btn-sm">Photos</a>
+                <a href="<?= APP_URL ?>/nbadmin/projets/edit?id=<?= $p['id'] ?>" class="btn btn-sm">Modifier</a>
                 <a href="<?= APP_URL ?>/<?= e($p['cat_slug']) ?>/<?= e($p['slug']) ?>" target="_blank" class="btn btn-sm">Voir</a>
             </td>
         </tr>

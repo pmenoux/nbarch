@@ -8,7 +8,7 @@ if ($id > 0) {
     $projet = DB::fetchOne('SELECT * FROM projets WHERE id = ?', [$id]);
     if (!$projet) {
         flash('Projet introuvable.', 'err');
-        redirect(APP_URL . '/admin/projets');
+        redirect(APP_URL . '/nbadmin/projets');
     }
     $is_edit = true;
 }
@@ -71,7 +71,7 @@ $categories = DB::fetchAll('SELECT * FROM categories ORDER BY ordre');
         <button type="submit" class="btn btn-primary">
             <?= $is_edit ? 'Enregistrer' : 'Créer le projet' ?>
         </button>
-        <a href="<?= APP_URL ?>/admin/projets" class="btn">Annuler</a>
+        <a href="<?= APP_URL ?>/nbadmin/projets" class="btn">Annuler</a>
         <?php if ($is_edit): ?>
         <button type="submit" name="delete" value="1" class="btn btn-danger"
                 onclick="return confirm('Supprimer ce projet et toutes ses photos ?')">

@@ -3,7 +3,7 @@ $id = (int)($_GET['id'] ?? 0);
 $page = DB::fetchOne('SELECT * FROM pages WHERE id = ?', [$id]);
 if (!$page) {
     flash('Page introuvable.', 'err');
-    redirect(APP_URL . '/admin/pages');
+    redirect(APP_URL . '/nbadmin/pages');
 }
 ?>
 
@@ -23,6 +23,6 @@ if (!$page) {
 
     <div class="form-actions">
         <button type="submit" class="btn btn-primary">Enregistrer</button>
-        <a href="<?= APP_URL ?>/admin/pages" class="btn">Annuler</a>
+        <a href="<?= APP_URL ?>/nbadmin/pages" class="btn">Annuler</a>
     </div>
 </form>

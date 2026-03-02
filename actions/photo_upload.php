@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/helpers.php';
 require_once __DIR__ . '/../includes/csrf.php';
-require_once __DIR__ . '/../admin/auth.php';
+require_once __DIR__ . '/../nbadmin/auth.php';
 
 require_login();
 csrf_check();
@@ -17,7 +17,7 @@ $projet_id = (int)($_POST['projet_id'] ?? 0);
 $projet = DB::fetchOne('SELECT id FROM projets WHERE id = ?', [$projet_id]);
 if (!$projet) {
     flash('Projet introuvable.', 'err');
-    redirect(APP_URL . '/admin/projets');
+    redirect(APP_URL . '/nbadmin/projets');
 }
 
 // Dossier destination
@@ -75,4 +75,4 @@ if ($count > 0) {
     flash('Aucune photo uploadée. Vérifiez le format et la taille.', 'err');
 }
 
-redirect(APP_URL . '/admin/projets/photos?id=' . $projet_id);
+redirect(APP_URL . '/nbadmin/projets/photos?id=' . $projet_id);

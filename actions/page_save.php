@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/helpers.php';
 require_once __DIR__ . '/../includes/csrf.php';
-require_once __DIR__ . '/../admin/auth.php';
+require_once __DIR__ . '/../nbadmin/auth.php';
 
 require_login();
 csrf_check();
@@ -18,7 +18,7 @@ $contenu = trim($_POST['contenu'] ?? '');
 
 if ($id === 0 || $titre === '') {
     flash('Données invalides.', 'err');
-    redirect(APP_URL . '/admin/pages');
+    redirect(APP_URL . '/nbadmin/pages');
 }
 
 DB::query(
@@ -27,4 +27,4 @@ DB::query(
 );
 
 flash('Page mise à jour.');
-redirect(APP_URL . '/admin/pages/edit?id=' . $id);
+redirect(APP_URL . '/nbadmin/pages/edit?id=' . $id);

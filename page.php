@@ -22,6 +22,7 @@ if (!$page) {
 
 $current_cat_slug    = '';
 $current_projet_slug = '';
+$current_page_slug   = $slug;
 $page_title          = e($page['titre']) . ' — ' . APP_NAME;
 
 require_once __DIR__ . '/includes/header.php';

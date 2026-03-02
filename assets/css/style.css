@@ -1,7 +1,6 @@
 /* ============================================
    NB.ARCH — Feuille de style
-   PHP/MySQL custom — 2026
-   Typo : Akkurat Pro
+   Swiss Design — Akkurat Pro
    ============================================ */
 
 /* --- @font-face --- */
@@ -57,18 +56,18 @@
 
 /* --- Base --- */
 html {
-    font-size: 14px;
+    font-size: 13px;
     -webkit-text-size-adjust: 100%;
 }
 body {
     font-family: 'Akkurat Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.55;
     color: #333;
     background: #fff;
 }
 a {
-    color: #333;
+    color: inherit;
     text-decoration: none;
 }
 a:hover {
@@ -90,81 +89,92 @@ img {
 .sidebar {
     width: 170px;
     flex-shrink: 0;
-    padding: 40px 20px 40px 20px;
+    padding: 30px 20px 30px 25px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     overflow-y: auto;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Logo */
 .logo {
     display: block;
     font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.02em;
+    font-size: 18px;
+    letter-spacing: 0.03em;
     color: #000;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     line-height: 1.2;
 }
 .logo:hover {
     color: #000;
 }
 
-/* --- Navigation --- */
+/* --- Navigation catégories --- */
+.sidebar-nav {
+    flex: 1;
+}
+
 .nav-cat {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .nav-cat-title {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
     font-weight: 400;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #333;
+    letter-spacing: 0.1em;
+    color: #888;
     cursor: pointer;
-    padding: 4px 0;
+    padding: 3px 0;
     background: none;
     border: none;
     font-family: inherit;
+    transition: color 0.15s;
 }
 .nav-cat-title:hover {
     color: #000;
 }
 .nav-cat-title .arrow {
-    font-size: 8px;
+    font-size: 7px;
     transition: transform 0.2s;
-    color: #999;
+    color: #aaa;
+    line-height: 1;
 }
 .nav-cat.active .nav-cat-title {
-    font-weight: 700;
+    color: #333;
+    font-weight: 400;
 }
 .nav-cat.active .nav-cat-title .arrow {
     transform: rotate(180deg);
 }
 
-/* Liste projets dans la sidebar */
+/* Liste projets sidebar */
 .nav-projets {
     display: none;
     list-style: none;
-    padding: 4px 0 8px 0;
+    padding: 2px 0 6px 0;
 }
 .nav-cat.active .nav-projets {
     display: block;
 }
 .nav-projets li {
-    padding: 2px 0;
+    padding: 1px 0;
 }
 .nav-projets a {
     font-weight: 300;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: #666;
+    color: #888;
+    transition: color 0.15s;
 }
 .nav-projets a:hover {
     color: #000;
@@ -174,108 +184,163 @@ img {
     color: #000;
 }
 
-/* Lien simple (Equipe, Contact) */
+/* Section pages fixes (équipe, contact) */
+.nav-pages {
+    margin-top: 12px;
+}
+
 .nav-page {
     display: block;
     font-weight: 400;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #333;
-    padding: 4px 0;
-    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+    color: #888;
+    padding: 3px 0;
+    transition: color 0.15s;
 }
 .nav-page:hover {
     color: #000;
+}
+.nav-page.current {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Copyright sidebar bas */
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    font-weight: 300;
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.02em;
 }
 
 /* --- Contenu principal --- */
 .content {
     margin-left: 170px;
-    padding: 40px 40px 60px 40px;
-    max-width: 900px;
+    padding: 30px 40px 60px 40px;
     flex: 1;
+    max-width: 780px;
 }
 
-/* Page projet */
+/* ========================
+   Page projet
+   ======================== */
 .projet-titre {
     font-weight: 300;
-    font-size: 36px;
+    font-size: 28px;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 1.1;
-    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 12px;
     color: #000;
 }
 
 .projet-meta {
     font-weight: 300;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.6;
     color: #333;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+}
+.projet-meta p {
+    margin-bottom: 0;
+}
+.projet-meta strong {
+    font-weight: 700;
 }
 
 .projet-credits {
     font-weight: 300;
-    font-size: 12px;
-    color: #999;
-    margin-bottom: 24px;
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
 }
 
+.projet-galerie {
+    margin-bottom: 10px;
+}
 .projet-galerie img {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     width: 100%;
-    max-width: 580px;
+    max-width: 560px;
 }
 
-/* Copyright bas de page */
+/* Copyright contenu */
 .copyright {
     font-weight: 300;
-    font-size: 11px;
-    color: #999;
-    margin-top: 20px;
+    font-size: 10px;
+    color: #bbb;
+    margin-top: 16px;
+    letter-spacing: 0.02em;
 }
 
-/* Page fixe (équipe, contact) */
+/* ========================
+   Pages fixes (équipe, contact)
+   ======================== */
 .page-titre {
     font-weight: 300;
     font-size: 28px;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
     margin-bottom: 20px;
     color: #000;
 }
+
 .page-contenu {
     font-weight: 300;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.7;
+    color: #333;
 }
 .page-contenu p {
-    margin-bottom: 14px;
+    margin-bottom: 4px;
+}
+.page-contenu strong {
+    font-weight: 700;
+    color: #000;
 }
 
-/* --- Responsive --- */
+/* ========================
+   Responsive
+   ======================== */
 @media (max-width: 768px) {
+    .site {
+        flex-direction: column;
+    }
     .sidebar {
         position: relative;
         width: 100%;
         height: auto;
         padding: 20px;
         border-bottom: 1px solid #eee;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 0 20px;
+    }
+    .logo {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .sidebar-nav {
+        width: 100%;
+    }
+    .sidebar-footer {
+        display: none;
     }
     .content {
         margin-left: 0;
         padding: 20px;
+        max-width: 100%;
     }
-    .site {
-        flex-direction: column;
-    }
-    .logo {
-        margin-bottom: 20px;
-    }
-    .projet-titre {
-        font-size: 24px;
+    .projet-titre,
+    .page-titre {
+        font-size: 22px;
     }
     .projet-galerie img {
         max-width: 100%;

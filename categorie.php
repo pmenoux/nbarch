@@ -16,9 +16,10 @@ if (!$categorie) {
     // Peut-être une page fixe ?
     $page = DB::fetchOne('SELECT * FROM pages WHERE slug = ?', [$cat_slug]);
     if ($page) {
-        // Redirige vers page.php
+        // Affiche la page fixe
         $current_cat_slug    = '';
         $current_projet_slug = '';
+        $current_page_slug   = $cat_slug;
         $page_title          = e($page['titre']) . ' — ' . APP_NAME;
 
         require_once __DIR__ . '/includes/header.php';

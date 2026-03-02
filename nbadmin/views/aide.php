@@ -28,7 +28,7 @@
     <p>Depuis la liste des projets, cliquez sur <strong>Modifier</strong> à droite du projet concerné.</p>
 
     <h3>Supprimer un projet</h3>
-    <p>Depuis la liste des projets, cliquez sur <strong>Supprimer</strong>. Cette action est irréversible et supprime également toutes les photos associées.</p>
+    <p>Depuis le formulaire de modification d'un projet, cliquez sur <strong>Supprimer</strong>. Une confirmation vous sera demandée. Cette action est irréversible et supprime également toutes les photos associées.</p>
 </div>
 
 <div class="aide-section">
@@ -59,13 +59,39 @@
 <div class="aide-section">
     <h2>Catégories</h2>
     <p>Les catégories organisent les projets dans la navigation du site (Réalisations, Projets en cours, etc.).</p>
+
+    <h3>Créer une catégorie</h3>
+    <ol>
+        <li>Cliquez sur <strong>Catégories</strong> dans la navigation</li>
+        <li>Cliquez sur <strong>Nouvelle catégorie</strong></li>
+        <li>Renseignez le nom et cliquez sur <strong>Créer la catégorie</strong></li>
+    </ol>
+
+    <h3>Supprimer une catégorie</h3>
+    <p>Depuis le formulaire de modification d'une catégorie, cliquez sur <strong>Supprimer</strong>. Une confirmation vous sera demandée. <strong>Attention : la suppression d'une catégorie supprime tous ses projets et photos associés.</strong></p>
+
     <p>Faites <strong>glisser-déposer</strong> les catégories pour modifier leur ordre dans la sidebar.</p>
 </div>
 
 <div class="aide-section">
-    <h2>Pages fixes</h2>
-    <p>Les pages fixes (Équipe, Contact) sont éditables depuis la rubrique <strong>Pages</strong>.</p>
-    <p>L'éditeur de texte permet de mettre en forme le contenu (gras, italique, liens, listes) sans connaître le HTML.</p>
+    <h2>Pages</h2>
+    <p>Les pages (Équipe, Contact, etc.) sont éditables depuis la rubrique <strong>Pages</strong>.</p>
+
+    <h3>Créer une page</h3>
+    <ol>
+        <li>Cliquez sur <strong>Pages</strong> dans la navigation</li>
+        <li>Cliquez sur <strong>+ Nouvelle page</strong></li>
+        <li>Renseignez le titre et le contenu</li>
+        <li>Le <strong>slug</strong> (adresse URL) est généré automatiquement depuis le titre</li>
+        <li>Cliquez sur <strong>Créer la page</strong></li>
+    </ol>
+    <p>La nouvelle page apparaît automatiquement dans la navigation du site public.</p>
+
+    <h3>Modifier une page</h3>
+    <p>Depuis la liste des pages, cliquez sur <strong>Modifier</strong> à droite de la page concernée.</p>
+
+    <h3>Supprimer une page</h3>
+    <p>Depuis le formulaire de modification, cliquez sur <strong>Supprimer</strong>. Une confirmation vous sera demandée. Cette action est irréversible.</p>
 </div>
 
 <div class="aide-section">

@@ -232,11 +232,11 @@ img {
    ======================== */
 .projet-titre {
     font-weight: 300;
-    font-size: 28px;
+    font-size: 39px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    line-height: 1.15;
-    margin-bottom: 12px;
+    line-height: 1.1;
+    margin-bottom: 14px;
     color: #000;
 }
 
@@ -285,10 +285,10 @@ img {
    ======================== */
 .page-titre {
     font-weight: 300;
-    font-size: 28px;
+    font-size: 39px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    line-height: 1.15;
+    line-height: 1.1;
     margin-bottom: 20px;
     color: #000;
 }

@@ -46,13 +46,10 @@ if (!$categorie || !$projet):
 <h1 class="projet-titre"><?= e(mb_strtoupper($projet['titre'])) ?></h1>
 
 <?php
-// Nettoyer la description : supprimer le titre dupliqué (<p><strong>TITRE</strong></p>)
+// Nettoyer la description : supprimer le premier <p><strong>...</strong></p>
+// (toujours un doublon du titre dans les données Indexhibit)
 $description = $projet['description'] ?? '';
-$description = preg_replace(
-    '#<p>\s*<strong>\s*' . preg_quote($projet['titre'], '#') . '\s*</strong>\s*</p>#iu',
-    '',
-    $description
-);
+$description = preg_replace('#<p>\s*<strong>[^<]*</strong>\s*</p>#iu', '', $description, 1);
 $description = trim($description);
 ?>
 <?php if ($description): ?>

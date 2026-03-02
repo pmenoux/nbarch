@@ -7,7 +7,7 @@
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/db.php';
 
-$login    = $argv[1] ?? 'admin';
+$login    = $argv[1] ?? 'nbadmin';
 $password = $argv[2] ?? 'NbArch2026!';
 
 $hash = password_hash($password, PASSWORD_DEFAULT);

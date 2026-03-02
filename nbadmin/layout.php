@@ -20,6 +20,7 @@ $flash = get_flash();
         <a href="<?= APP_URL ?>/nbadmin/projets"<?= str_starts_with($route, 'projets') ? ' class="active"' : '' ?>>Projets</a>
         <a href="<?= APP_URL ?>/nbadmin/categories"<?= $route === 'categories' ? ' class="active"' : '' ?>>Catégories</a>
         <a href="<?= APP_URL ?>/nbadmin/pages"<?= str_starts_with($route, 'pages') ? ' class="active"' : '' ?>>Pages</a>
+        <a href="<?= APP_URL ?>/nbadmin/aide"<?= $route === 'aide' ? ' class="active"' : '' ?>>Aide</a>
     </nav>
     <div class="admin-user">
         <span><?= e($admin['login'] ?? '') ?></span>

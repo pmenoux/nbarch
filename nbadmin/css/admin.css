@@ -408,6 +408,44 @@ body {
     letter-spacing: .03em;
 }
 
+/* --- Aide --- */
+.aide-section {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+}
+.aide-section h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+.aide-section h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin: 12px 0 4px;
+}
+.aide-section p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+.aide-section ul,
+.aide-section ol {
+    font-size: 13px;
+    color: #555;
+    margin: 4px 0 8px 20px;
+    line-height: 1.7;
+}
+.aide-section li { margin-bottom: 2px; }
+.aide-section strong { color: #000; }
+
 /* --- Footer --- */
 .admin-footer {
     text-align: center;

@@ -1,29 +1,7 @@
 /* admin.js — NB.ARCH admin
-   Slug auto, drag-and-drop photos, cover selection, sortable lists */
+   Drag-and-drop photos, cover selection, sortable lists */
 
 document.addEventListener('DOMContentLoaded', function () {
-
-    // ========================================
-    // Auto-slug depuis le titre
-    // ========================================
-    var titre = document.getElementById('titre');
-    var slug  = document.getElementById('slug');
-    if (titre && slug && slug.value === '') {
-        titre.addEventListener('input', function () {
-            var s = this.value.toLowerCase();
-            s = s.replace(/[àâä]/g, 'a')
-                 .replace(/[éèêë]/g, 'e')
-                 .replace(/[îï]/g, 'i')
-                 .replace(/[ôö]/g, 'o')
-                 .replace(/[ùûü]/g, 'u')
-                 .replace(/ç/g, 'c')
-                 .replace(/œ/g, 'oe')
-                 .replace(/æ/g, 'ae')
-                 .replace(/[^a-z0-9]+/g, '-')
-                 .replace(/^-|-$/g, '');
-            slug.value = s;
-        });
-    }
 
     // ========================================
     // CSRF token (lu depuis le premier hidden input)

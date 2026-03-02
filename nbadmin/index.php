@@ -32,6 +32,7 @@ $routes = [
     'categories'       => 'views/categories/list.php',
     'pages'            => 'views/pages/list.php',
     'pages/edit'       => 'views/pages/form.php',
+    'aide'             => 'views/aide.php',
 ];
 
 if (!isset($routes[$route])) {
@@ -51,6 +52,7 @@ $page_admin_title = match ($route) {
     'categories'       => 'Catégories',
     'pages'            => 'Pages',
     'pages/edit'       => 'Modifier la page',
+    'aide'             => 'Aide',
     default            => 'Admin',
 };
 

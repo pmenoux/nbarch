@@ -29,13 +29,6 @@ $categories = DB::fetchAll('SELECT * FROM categories ORDER BY ordre');
     </div>
 
     <div class="form-group">
-        <label for="slug">Slug (URL)</label>
-        <input type="text" id="slug" name="slug"
-               value="<?= e($projet['slug'] ?? '') ?>"
-               placeholder="auto-généré depuis le titre">
-    </div>
-
-    <div class="form-group">
         <label for="categorie_id">Catégorie</label>
         <select id="categorie_id" name="categorie_id" required>
             <?php foreach ($categories as $cat): ?>

@@ -33,7 +33,6 @@ if (!empty($_POST['delete']) && $id > 0) {
 
 // --- Validation ---
 $titre        = trim($_POST['titre'] ?? '');
-$slug         = trim($_POST['slug'] ?? '');
 $categorie_id = (int)($_POST['categorie_id'] ?? 0);
 $description  = trim($_POST['description'] ?? '');
 $credits      = trim($_POST['credits'] ?? '');
@@ -44,8 +43,11 @@ if ($titre === '' || $categorie_id === 0) {
     redirect(APP_URL . '/nbadmin/projets/' . ($id ? "edit?id=$id" : 'nouveau'));
 }
 
-// Slug auto si vide
-if ($slug === '') {
+// Slug : conserver l'existant en édition, générer en création
+if ($id > 0) {
+    $existing_projet = DB::fetchOne('SELECT slug FROM projets WHERE id = ?', [$id]);
+    $slug = $existing_projet ? $existing_projet['slug'] : make_slug($titre);
+} else {
     $slug = make_slug($titre);
 }
 

@@ -104,13 +104,12 @@ img {
 .logo {
     display: block;
     font-weight: 300;
-    font-size: 65pt;
-    letter-spacing: 0.02em;
+    font-size: 34px;
+    letter-spacing: 0.04em;
     color: #000;
     margin-bottom: 30px;
-    line-height: 1;
-    max-width: 200px;
-    overflow: hidden;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 .logo:hover {
     color: #000;
@@ -222,11 +221,11 @@ img {
 /* --- Contenu principal --- */
 /* padding-top : aligner la baseline du titre (55px) avec la baseline
    de "RÉALISATIONS" (11px) dans la sidebar.
-   Sidebar : 30 + 78 (logo 65px*1.2) + 30 (margin) + ~9 (baseline 11px) = ~147px
-   Titre 55px baseline ≈ padding-top + 44px → padding-top = 103px */
+   Sidebar : 30 + 41 (logo 34px*1.2) + 30 (margin) + ~9 (baseline 11px) = ~110px
+   Titre 55px baseline ≈ padding-top + 44px → padding-top = 66px */
 .content {
     margin-left: 200px;
-    padding: 103px 40px 60px 40px;
+    padding: 66px 40px 60px 40px;
     flex: 1;
     max-width: 780px;
 }

@@ -303,6 +303,40 @@ img {
 }
 
 /* ========================
+   Hamburger (hidden on desktop)
+   ======================== */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 20;
+}
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #333;
+    transition: transform 0.25s, opacity 0.2s;
+}
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.sidebar-top {
+    display: contents;
+}
+
+/* ========================
    Responsive
    ======================== */
 @media (max-width: 768px) {
@@ -310,22 +344,37 @@ img {
         flex-direction: column;
     }
     .sidebar {
-        position: relative;
+        position: fixed;
         width: 100%;
         height: auto;
-        padding: 20px;
+        max-height: 100vh;
+        overflow-y: auto;
+        padding: 16px 20px;
         border-bottom: 1px solid #eee;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 0 20px;
+        flex-direction: column;
+        background: #fff;
+        z-index: 100;
+    }
+    .sidebar-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
     .logo {
-        width: 100%;
-        margin-bottom: 15px;
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+    .hamburger {
+        display: flex;
     }
     .sidebar-nav {
+        display: none;
         width: 100%;
+        padding-top: 16px;
+    }
+    .sidebar-nav.open {
+        display: block;
     }
     .sidebar-footer {
         display: none;
@@ -333,13 +382,18 @@ img {
     .content {
         margin-left: 0;
         padding: 20px;
+        padding-top: 70px;
         max-width: 100%;
     }
     .projet-titre,
     .page-titre {
-        font-size: 22px;
+        font-size: 28px;
+        margin-bottom: 14px;
     }
     .projet-galerie img {
         max-width: 100%;
+    }
+    .page-contenu {
+        font-size: 14px;
     }
 }

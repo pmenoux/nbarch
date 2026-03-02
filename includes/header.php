@@ -33,10 +33,15 @@ $page_title          = $page_title ?? APP_NAME;
 <body>
 <div class="site">
 
-    <nav class="sidebar">
-        <a href="<?= APP_URL ?>/" class="logo">NB.ARCH</a>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <a href="<?= APP_URL ?>/" class="logo">NB.ARCH</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
 
-        <div class="sidebar-nav">
+        <div class="sidebar-nav" id="sidebarNav">
             <?php foreach ($categories as $cat): ?>
             <?php
                 $is_active   = ($cat['slug'] === $current_cat_slug);

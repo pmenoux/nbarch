@@ -218,9 +218,11 @@ img {
 }
 
 /* --- Contenu principal --- */
+/* padding-top aligné sur le début de la nav sidebar :
+   sidebar padding-top (30) + logo height (~22) + logo margin-bottom (30) = 82px */
 .content {
     margin-left: 170px;
-    padding: 30px 40px 60px 40px;
+    padding: 82px 40px 60px 40px;
     flex: 1;
     max-width: 780px;
 }

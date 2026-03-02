@@ -45,9 +45,19 @@ if (!$categorie || !$projet):
 
 <h1 class="projet-titre"><?= e(mb_strtoupper($projet['titre'])) ?></h1>
 
-<?php if ($projet['description']): ?>
+<?php
+// Nettoyer la description : supprimer le titre dupliqué (<p><strong>TITRE</strong></p>)
+$description = $projet['description'] ?? '';
+$description = preg_replace(
+    '#<p>\s*<strong>\s*' . preg_quote($projet['titre'], '#') . '\s*</strong>\s*</p>#iu',
+    '',
+    $description
+);
+$description = trim($description);
+?>
+<?php if ($description): ?>
 <div class="projet-meta">
-    <?= $projet['description'] ?>
+    <?= $description ?>
 </div>
 <?php endif; ?>
 

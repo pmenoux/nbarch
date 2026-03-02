@@ -103,9 +103,9 @@ img {
 /* Logo */
 .logo {
     display: block;
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 0.03em;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 0.06em;
     color: #000;
     margin-bottom: 30px;
     line-height: 1.2;
@@ -219,10 +219,10 @@ img {
 
 /* --- Contenu principal --- */
 /* padding-top aligné sur le début de la nav sidebar :
-   sidebar padding-top (30) + logo height (~22) + logo margin-bottom (30) = 82px */
+   sidebar padding-top (30) + logo height (~29) + logo margin-bottom (30) = 89px */
 .content {
     margin-left: 170px;
-    padding: 82px 40px 60px 40px;
+    padding: 89px 40px 60px 40px;
     flex: 1;
     max-width: 780px;
 }

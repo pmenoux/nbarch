@@ -220,12 +220,13 @@ img {
 
 /* --- Contenu principal --- */
 /* padding-top : aligner la baseline du titre (55px) avec la baseline
-   de "RÉALISATIONS" (11px) dans la sidebar.
-   Sidebar : 30 + 41 (logo 34px*1.2) + 30 (margin) + ~9 (baseline 11px) = ~110px
-   Titre 55px baseline ≈ padding-top + 44px → padding-top = 66px */
+   du logo "NB.ARCH" (34px) dans la sidebar.
+   Logo baseline : 30 (padding) + 3.4 (demi-interligne) + 25.8 (ascendante) ≈ 59px
+   Titre 55px baseline : padding-top + 2.75 + 41.8 ≈ padding-top + 45px
+   → padding-top ≈ 14px */
 .content {
     margin-left: 200px;
-    padding: 66px 40px 60px 40px;
+    padding: 14px 40px 60px 40px;
     flex: 1;
     max-width: 780px;
 }

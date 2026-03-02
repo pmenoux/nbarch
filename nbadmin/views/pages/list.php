@@ -2,6 +2,8 @@
 $pages = DB::fetchAll('SELECT * FROM pages ORDER BY ordre');
 ?>
 
+<p><a href="<?= APP_URL ?>/nbadmin/pages/nouveau" class="btn btn-primary">+ Nouvelle page</a></p>
+
 <table class="table">
     <thead>
         <tr>

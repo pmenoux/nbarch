@@ -33,7 +33,8 @@ $routes = [
     'categories/nouveau'  => 'views/categories/form.php',
     'categories/edit'     => 'views/categories/form.php',
     'pages'               => 'views/pages/list.php',
-    'pages/edit'       => 'views/pages/form.php',
+    'pages/nouveau'       => 'views/pages/form.php',
+    'pages/edit'          => 'views/pages/form.php',
     'aide'             => 'views/aide.php',
 ];
 
@@ -55,7 +56,8 @@ $page_admin_title = match ($route) {
     'categories/nouveau'  => 'Nouvelle catégorie',
     'categories/edit'     => 'Modifier la catégorie',
     'pages'               => 'Pages',
-    'pages/edit'       => 'Modifier la page',
+    'pages/nouveau'       => 'Nouvelle page',
+    'pages/edit'          => 'Modifier la page',
     'aide'             => 'Aide',
     default            => 'Admin',
 };

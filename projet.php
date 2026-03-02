@@ -47,7 +47,7 @@ if (!$categorie || !$projet):
 
 <?php if ($projet['description']): ?>
 <div class="projet-meta">
-    <?= nl2br(e($projet['description'])) ?>
+    <?= $projet['description'] ?>
 </div>
 <?php endif; ?>
 

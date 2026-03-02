@@ -8,7 +8,7 @@ require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/helpers.php';
 require_once __DIR__ . '/../includes/csrf.php';
 
-csrf_check();
+csrf_check(APP_URL . '/nbadmin/login');
 
 $login    = trim($_POST['login'] ?? '');
 $password = $_POST['password'] ?? '';

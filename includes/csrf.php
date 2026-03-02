@@ -14,10 +14,16 @@ function csrf_field(): string {
 }
 
 // Vérifie le token CSRF (à appeler dans chaque action POST)
-function csrf_check(): void {
+// Retourne true si valide, false sinon (évite les 403 qui déclenchent le WAF)
+function csrf_check(?string $redirect_url = null): bool {
     $token = $_POST['_token'] ?? '';
     if (!hash_equals(csrf_token(), $token)) {
+        if ($redirect_url) {
+            flash('Session expirée. Veuillez réessayer.', 'err');
+            redirect($redirect_url);
+        }
         http_response_code(403);
         die('Session expirée. Rechargez la page.');
     }
+    return true;
 }

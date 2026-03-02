@@ -47,3 +47,18 @@ function get_cover(int $projet_id): array|false {
 function photo_url(int $projet_id, string $filename): string {
     return UPLOAD_URL . $projet_id . '/' . rawurlencode($filename);
 }
+
+// Réglages (table clé/valeur)
+function get_reglage(string $cle, ?string $defaut = null): ?string {
+    $row = DB::fetchOne('SELECT valeur FROM reglages WHERE cle = ?', [$cle]);
+    return $row ? $row['valeur'] : $defaut;
+}
+
+function set_reglage(string $cle, ?string $valeur): void {
+    $exists = DB::fetchOne('SELECT 1 FROM reglages WHERE cle = ?', [$cle]);
+    if ($exists) {
+        DB::query('UPDATE reglages SET valeur = ? WHERE cle = ?', [$valeur, $cle]);
+    } else {
+        DB::query('INSERT INTO reglages (cle, valeur) VALUES (?, ?)', [$cle, $valeur]);
+    }
+}

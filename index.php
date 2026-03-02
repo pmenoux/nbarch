@@ -6,15 +6,29 @@ require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/helpers.php';
 
-// Premier projet publié (catégorie réalisations par défaut)
-$premier = DB::fetchOne(
-    "SELECT p.*, c.slug AS cat_slug
-     FROM projets p
-     JOIN categories c ON c.id = p.categorie_id
-     WHERE p.statut = 'publié'
-     ORDER BY c.ordre, p.ordre
-     LIMIT 1"
-);
+// Projet sélectionné pour l'accueil (réglage admin), sinon premier publié
+$accueil_id = get_reglage('accueil_projet_id');
+
+if ($accueil_id) {
+    $premier = DB::fetchOne(
+        "SELECT p.*, c.slug AS cat_slug
+         FROM projets p
+         JOIN categories c ON c.id = p.categorie_id
+         WHERE p.id = ? AND p.statut = 'publié'",
+        [(int)$accueil_id]
+    );
+}
+
+if (empty($premier)) {
+    $premier = DB::fetchOne(
+        "SELECT p.*, c.slug AS cat_slug
+         FROM projets p
+         JOIN categories c ON c.id = p.categorie_id
+         WHERE p.statut = 'publié'
+         ORDER BY c.ordre, p.ordre
+         LIMIT 1"
+    );
+}
 
 if (!$premier) {
     $page_title = APP_NAME;
@@ -29,6 +43,7 @@ if (!$premier) {
 $current_cat_slug    = $premier['cat_slug'];
 $current_projet_slug = '';
 $page_title          = APP_NAME;
+$content_class       = 'content-home';
 
 require_once __DIR__ . '/includes/header.php';
 

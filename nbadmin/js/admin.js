@@ -209,6 +209,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ========================================
+    // Accueil image selector (radio cards)
+    // ========================================
+    document.querySelectorAll('.accueil-card input[type="radio"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            document.querySelectorAll('.accueil-card').forEach(function (c) {
+                c.classList.remove('selected');
+            });
+            this.closest('.accueil-card').classList.add('selected');
+        });
+    });
+
+    // ========================================
     // Quill WYSIWYG editors
     // ========================================
     var quillConfig = {

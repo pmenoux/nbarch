@@ -21,6 +21,7 @@ $current_cat_slug    = $current_cat_slug ?? '';
 $current_projet_slug = $current_projet_slug ?? '';
 $current_page_slug   = $current_page_slug ?? '';
 $page_title          = $page_title ?? APP_NAME;
+$content_class       = $content_class ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -83,4 +84,4 @@ $page_title          = $page_title ?? APP_NAME;
         </div>
     </nav>
 
-    <main class="content">
+    <main class="content<?= $content_class ? ' ' . $content_class : '' ?>">

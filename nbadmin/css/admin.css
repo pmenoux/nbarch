@@ -337,6 +337,77 @@ body {
 .ql-toolbar.ql-snow { border-color: #ddd; border-radius: 3px 3px 0 0; }
 .ql-container.ql-snow { border-color: #ddd; border-radius: 0 0 3px 3px; }
 
+/* --- Accueil selector --- */
+.accueil-section {
+    margin-bottom: 24px;
+}
+.accueil-section h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #000;
+}
+.accueil-help {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 16px;
+}
+.accueil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.accueil-card {
+    position: relative;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color .15s;
+    text-align: center;
+}
+.accueil-card:hover { border-color: #999; }
+.accueil-card.selected { border-color: #2e7d32; }
+.accueil-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.accueil-thumb {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+.accueil-auto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    color: #888;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .05em;
+}
+.accueil-name {
+    padding: 6px 8px 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.accueil-cat {
+    padding: 0 8px 6px;
+    font-size: 10px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
 /* --- Footer --- */
 .admin-footer {
     text-align: center;

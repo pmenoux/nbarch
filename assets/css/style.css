@@ -230,6 +230,13 @@ img {
     max-width: 780px;
 }
 
+/* Page d'accueil : aligner le bord sup. de l'image avec le haut
+   de "RÉALISATIONS" dans la sidebar.
+   Sidebar : 30 (padding) + 41 (logo) + 30 (margin) = 101px */
+.content-home {
+    padding-top: 101px;
+}
+
 /* ========================
    Page projet
    ======================== */
@@ -379,7 +386,8 @@ img {
     .sidebar-footer {
         display: none;
     }
-    .content {
+    .content,
+    .content-home {
         margin-left: 0;
         padding: 20px;
         padding-top: 70px;

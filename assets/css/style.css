@@ -218,11 +218,13 @@ img {
 }
 
 /* --- Contenu principal --- */
-/* padding-top aligné sur le début de la nav sidebar :
-   sidebar padding-top (30) + logo height (~29) + logo margin-bottom (30) = 89px */
+/* padding-top : aligner la baseline du titre (39px) avec la baseline
+   de "RÉALISATIONS" (11px) dans la sidebar.
+   Sidebar : 30 + 29 (logo) + 30 (margin) + ~9 (baseline 11px) = ~98px
+   Titre 39px baseline ≈ padding-top + 31px → padding-top = 67px */
 .content {
     margin-left: 170px;
-    padding: 89px 40px 60px 40px;
+    padding: 67px 40px 60px 40px;
     flex: 1;
     max-width: 780px;
 }

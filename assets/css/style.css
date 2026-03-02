@@ -298,12 +298,12 @@ img {
 
 .page-contenu {
     font-weight: 300;
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.6;
     color: #333;
 }
 .page-contenu p {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 .page-contenu strong {
     font-weight: 700;

@@ -2,6 +2,10 @@ Options -Indexes
 
 RewriteEngine On
 
+# Redirection 26.nbarch.com → nbarch.com (301 permanent)
+RewriteCond %{HTTP_HOST} ^26\.nbarch\.com$ [NC]
+RewriteRule ^(.*)$ https://nbarch.com/$1 [R=301,L]
+
 # Fichiers et dossiers réels → servis directement
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
